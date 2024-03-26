@@ -1,0 +1,45 @@
+#include <iostream> 
+#include<iomanip> 
+
+using namespace std;
+int main()
+{
+    setlocale(0, "");
+    
+    int matrix[5][5];
+    int sum = 0;
+
+    cout << "Введите 5 цифр для создания матрицы \n";
+    for (int i = 0; i < 5; i++) {
+        cout << "Вы находитесь на " << i + 1 << " строчке \n";
+        cin >> matrix[i][0] >> matrix[i][1] >> matrix[i][2] >> matrix[i][3] >> matrix[i][4];
+        system("cls");
+    }
+
+    cout << "---------------------------\n[+] Матрица:" << endl;
+    for (int j = 0; j < 5; j++) {
+        for (int l = 0; l < 5; l++) {
+            cout << setw(4) << matrix[j][l];
+        }
+        cout << "\n\n";
+    }
+    
+    cout << "[+] Сумма цифр в столбцах матрицы:\n" << endl;
+    for (int j = 0; j < 5; j++) {
+        for (int l = 0; l < 5; l++) {
+            sum += matrix[l][j];
+        }
+        cout << "В столбеце номер " << j + 1 << " сумма элементов матрицы - " << sum << endl;
+        sum = 0;
+    }
+
+    cout << "\n";
+    cout << "[+] Сумма цифр в строчках матрицы:\n" << endl;
+    for (int j = 0; j < 5; j++) {
+        for (int l = 0; l < 5; l++) {
+            sum += matrix[j][l];
+        }
+        cout << "В строчке номер " << j + 1 << " сумма элементов матрицы - " << sum << endl;
+        sum = 0;
+    }
+}
